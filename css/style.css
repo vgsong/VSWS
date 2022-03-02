@@ -1,27 +1,115 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    
+
+}
+
 body {
     background-color: rgb(240, 240, 240);
     display: flex;
     flex-direction: row;
+    gap: 35px;
+    flex-grow: 1;
+    height: 100vh;
+    margin: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+    
 }
 
+
+
+/* beg NAV CONTAINER SECTION */
 .flex-nav-item{
-    gap: 12px;
     display: flex;
     flex-direction: column;
-    padding: 25px;
-    height: 50vh;
-    color: white;
-    font-size: 45px;
-    border-right:1px solid rgb(0, 110, 255);
+    justify-content: center;
     flex-grow: 0;
+    min-width: 175px;
+    max-width: 200px;
+    gap: 12px;
+    padding: 25px;
+    color: black;
+    font-size: 30px;
+    border-right:2px solid rgb(23, 93, 185);
 
 }
 
 .flex-nav-item div{
-    text-align: center;
-}
+    padding: 15px;
 
+}
 
 .flex-nav-item div a {
     text-decoration: none;
+    text-align: right;
 }
+
+.flex-nav-item div a:hover {
+    text-shadow: 1px 1px rgb(23, 93, 185);
+
+  }
+
+
+.flex-nav-item div a:visited {
+    color: black;
+
+  }
+
+/* end NAV CONTAINER SECTION */
+
+
+
+
+/* beg MAIN CONTAINER SECTION */
+.flex-main-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 15px;
+    /* background-color: rgb(238, 238, 238); */
+    
+}
+
+.flex-main-container section {
+    margin: 15px 10px;
+    /* background-color: bisque; */
+}
+
+.flex-main-container header p {
+    font-size: 12px;
+    text-align: right;
+}
+
+.flex-main-container header spam {
+    font-weight: bold;
+    font-size: 14px;
+    color: rgb(23, 93, 185);
+
+}
+
+.flex-main-container hr{
+    width: 100%;
+    color: rgb(23, 93, 185);
+}
+
+/* end MAIN CONTAINER SECTION */
+
+
+.flex-skill-container{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    
+}
+.flex-skill-container ul{
+    margin: 10px;
+}
+
+.flex-skill-container ul + ul{
+    list-style-type: none;
+    color:rgb(23, 93, 185);
+    font-weight: bolder;
+}
+
