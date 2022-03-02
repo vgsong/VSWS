@@ -12,9 +12,9 @@ body {
     gap: 35px;
     flex-grow: 1;
     height: 100vh;
-    margin: 50px;
+    /* margin: 50px; */
     margin-left: 100px;
-    margin-right: 100px;
+    margin-right: 150px;
     
 }
 
@@ -24,9 +24,8 @@ body {
 .flex-nav-item{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    flex-grow: 0;
-    min-width: 175px;
+    justify-content: flex-start;
+    flex-grow: 1;
     max-width: 200px;
     gap: 12px;
     padding: 25px;
@@ -41,16 +40,25 @@ body {
 
 }
 
+.flex-nav-item div img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid rgb(23, 93, 185);
+}
+
 .flex-nav-item div a {
     text-decoration: none;
     text-align: right;
+
 }
 
 .flex-nav-item div a:hover {
-    text-shadow: 1px 1px rgb(23, 93, 185);
+    text-shadow: 1.5px 0px rgb(23, 93, 185);
+
+
 
   }
-
 
 .flex-nav-item div a:visited {
     color: black;
@@ -66,15 +74,19 @@ body {
 .flex-main-container {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    flex-grow: 3;
     padding: 15px;
     /* background-color: rgb(238, 238, 238); */
     
 }
 
 .flex-main-container section {
-    margin: 15px 10px;
+    /* margin: 15px 10px; */
     /* background-color: bisque; */
+}
+.flex-main-container header {
+    display: flex;
+    justify-content: space-between;
 }
 
 .flex-main-container header p {
@@ -94,14 +106,17 @@ body {
     color: rgb(23, 93, 185);
 }
 
+
+
 /* end MAIN CONTAINER SECTION */
 
 
+/* beg SKILL CONTAINER SECTION */
 .flex-skill-container{
     display: flex;
     flex-direction: row;
     margin: 0;
-    
+
 }
 .flex-skill-container ul{
     margin: 10px;
@@ -113,3 +128,21 @@ body {
     font-weight: bolder;
 }
 
+/* end SKILL CONTAINER SECTION */
+
+.flex-port-container  {
+    display: flex;
+    flex-direction: column;
+    margin:10px;
+
+
+}
+
+.flex-port-container hr {
+    width: 100%;
+    color: rgb(23, 93, 185);
+}
+
+.flex-port-container p {
+    margin: 0;
+}
