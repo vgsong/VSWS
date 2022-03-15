@@ -11,6 +11,12 @@ body {
     /* background-image: url("/img/mainbg.jpg") */
 }
 
+hr {
+    box-shadow: 2px 2px rgb(0, 0, 0);
+
+}
+
+
 /* MENU CSS---------------- */
 .main-menu-div{
     position:fixed;
@@ -24,7 +30,7 @@ body {
 .flex-nav-cont {
     display: flex;
     justify-content: space-around;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.918);
     border-bottom: 4px solid black;
 
 
@@ -43,21 +49,27 @@ body {
     /* border: 1px solid black; */
     font-size: 25px;
 }
+
+.flex-nav-menu ul li a{
+    text-decoration: none;
+    color: rgb(0,0,0);
+}
+.flex-nav-menu ul li a:hover{
+    text-shadow: 2px 0px rgb(23, 93, 185);
+}
+
 /* END MENU CSS---------------- */
 
 
 
 .wrapper {
-    max-width: 90%;
+    max-width: 1400px;
     margin: 0 auto;
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     /*height: 100vh;  */
   }
-
-
-
 
 /* .wrapper div p {
     height: inherit;
@@ -68,26 +80,226 @@ body {
 
 .wrapper .flex-item-div {
     padding-top:40px;
-    padding-right:200px;
-    padding-left:200px;
+    padding-right:175px;
+    padding-left:175px;
     padding-bottom:20px;
 
     height: inherit;
     text-align: left;
+    font-size: 18px;
+
 }
 
 /* ------ABOUTME------- */
-
 .wrapper .flex-item-div .flex-contact-container{
     display: flex;
     justify-content: flex-end;
-    gap:20px;
-
+    gap: 30px;
 }
 
 .wrapper .flex-item-div .flex-contact-container .flex-contact-name {
     font-size: 25px;
 }
 
+.flex-contact-container span {
+    font-weight: bold;
+}
 /* -------------- */
 
+
+/* BEGIN ABOUTMEWRITING------- */
+.flex-aboutwriting p {
+    padding-bottom:15px;
+}
+/* END ABOUTMEWRITING------- */
+
+
+
+/* BEGIN PROEXP ------- */
+.flex-professional-cont {
+    display: flex;
+    flex-direction: column;
+
+}
+.flex-professional-cont p {
+    padding-top:20px;
+
+}
+.flex-logos-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.flex-logos-cont img {
+    height: 155px;
+    width: 155px;
+    border: 1px solid black;
+    box-shadow: 2px 2px rgb(0, 0, 0);
+    margin: 35px;
+    transition: transform 0.2s;
+
+}
+.flex-logos-cont img:hover{
+    transform: scale(1.1);
+}
+/* END PROEXP ------- */
+
+
+/* BEGIN SKILLS ------- */
+
+.flex-skill-container {
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+}
+
+.flex-skill-container ul + ul{
+    list-style-type: none;
+}
+/* END SKILLS ------- */
+
+.flex-footer-cont {
+    height: 300px;
+    background-color: rgb(0, 31, 59);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    border: 4px solid white;
+
+}
+
+/* BEGIN LINK PAGE------ */
+
+
+
+/* for the padding between  */
+
+.flex-item-div div h5{
+    margin:15px;
+}
+
+
+.flex-fav-links{
+    border-bottom:2px solid black;
+    padding-bottom: 15px;
+
+}
+
+.flex-fav-podcast{
+    border-bottom:2px solid black;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.flex-fav-podcast img {
+    height: 155px;
+    width: 155px;
+    margin: 0px;
+    box-shadow: 2px 2px rgb(0, 0, 0);
+
+}
+.flex-fav-podcast-card {
+    display: flex;
+    flex-direction: row;
+    margin: 25px;
+    margin-top: 0;
+    padding: 15px;
+    box-shadow: 2px 2px 5px 0  rgb(0, 0, 0);
+    background-color: rgb(240, 240, 240);
+    width: 75%;
+}
+
+.flex-fav-podcast-card:hover {
+    box-shadow: 2px 4px 16px 0  rgb(0, 0, 0);
+
+}
+
+.flex-fav-podcast-card div{
+    padding: 15px;
+    padding-left: 35px;
+
+}
+.flex-fav-podcast-card div h5{
+    margin: 0;
+    padding: 0;
+
+}
+
+.flex-fav-podcast-card div p{
+    margin-top: 10px;
+    padding: 0;
+
+}
+
+.flex-fav-book{
+    border-bottom:2px solid black;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-fav-book-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.flex-fav-book-cont img{
+    height: 235px;
+    width: 170px;
+    border: 2px solid black;
+    transition: transform .2s;
+}
+
+.flex-fav-book-cont img:hover{
+    transform: scale(1.2);
+    box-shadow: 2px 4px 16px 0  rgb(0, 0, 0);
+
+}
+
+/* END LINK PAGE------ */
+
+
+/* BEGIN PORT PAGE------ */
+
+.flex-port-card {
+    display: flex;
+    flex-direction: row;
+    margin: 25px;
+    margin-top: 13px;
+    padding: 15px;
+    box-shadow: 2px 2px 5px 0  rgb(0, 0, 0);
+    background-color: rgb(240, 240, 240);
+    width: 100%;
+
+}
+
+.flex-port-card img {
+    width: 155px;
+    height: 155px;
+    margin: 15px;
+}
+.flex-port-card div {
+    margin: 15px;
+}
+.flex-port-card div h3 {
+    margin: 5px;
+}
+
+.flex-port-card div p {
+    margin: 5px;
+    margin-top: 15px;
+}
+
+.flex-port-card div a{
+    margin: 5px;
+}
+
+
+.flex-port-card div p span{
+    font-weight: bold;
+}
