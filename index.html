@@ -1,101 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="utf-8">
   <title>VS MAIN</title>
-  <link href="/css/normalize.css" ref="stylesheet"/>
-  <link href="/css/style.css" rel="stylesheet"/>
+  <link href="css/normalize.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <script src="script/main.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Open+Sans&family=Smooch+Sans&family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
 
+
 </head>
+<body onload="rotateInterests()">
 
+  <div>
 
-<body>
+  <header>
+    <img src="img/ringo.jpg" alt="ringo">
 
-  <div class="main-menu-div">
-    <div class="flex-nav-cont">
+    <ul>
+      <li>About</li>
+      <li>Projects</li>
+      <li>Links</li>
+      <li>Blog</li>
+    </ul>
 
-      <div>
-      </div>
-
-      <div class="flex-nav-menu">
-        <ul>
-          <li><a href="index.html">About</a></li>
-          <li><a href="/pages/links.html">Links </a></li>
-          <li><a href="/pages/portfolio.html">Portfolio </a></li>
-          <li><a href="/pages/pictures.html">Pictures </a></li>
-          <li><a href="/pages/blog.html">Blog </a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="wrapper">
-
-    <div class="flex-item-div">
-
-      <h1>ABOUT ME</h1>
-
-        <div class="flex-contact-container">
-          <div class="flex-contact-name">
-            <span>-VICTOR SONG</span>
-          </div>
-          <div>
-            <span>email:</span> vctrsong@gmail.com
-            <br>
-            <span>github:</span> https://github.com/vgsong
-            <br>
-            <span>location:</span> Los Angeles, California
-          </div>
-
-        </div>
-
+    <div class="flex-icon-cont">
+      <img src="logos\locicon.png" alt="">
+      Los Angeles, CA
     </div>
 
-    <hr>
+    <div class="flex-icon-cont">
+      <img src="logos\mailicon.png" alt="">
+      E-Mail 
+    </div>
 
-    <div class="flex-item-div">
+    <div class="flex-icon-cont">
+      <img src="logos\ghicon.png" alt="">
+      GitHub
+    </div>
+
+    <div class="flex-icon-cont">
+      <img src="logos\twitticon.png" alt="">
+      Twitter
+    </div>
+
+    <div class="flex-icon-cont">
+      <img src="logos\steamico.png" alt="">
+      Steam
+    </div>
+
+  </header>
+
+  <main>
+
+    <section>
+
+
+      <h1>ABOUT.</h1>
+      <p id="chgtext">Hi.</p>
+      <p>I work in a civil engineering company as Financial/Data Analyst. </p>
+       <p>Outside work I enjoy cycling, programming, reading, and learning new things.</p>
+
+      <p>I am watching/following the 100DEVS full-stack course on Youtube/Twitch. I am also learning React on freeCodeCamp.com</p>
+      <p>I consider myself "advanced" beginner in programming. I would love to get an opportunity to get more professional experience in the field.</p>  
+  
+        <hr>
+
       
-      <div class="flex-aboutwriting">
-        <p>
-          I aspire in working in tech. I have discovered coding from the boredom of daily spreadsheets and 
-          realized my heart was not in accounting pronouncements nor in revenue recognition. 
-          My heart is in databases, creating things, and solving problems through programming/automation. 
-          Working at a bank, I eventually taught myself VBA (Visual Basic for Application), and Python was the natural progression towards my curiosity.
+    <div>
 
-        </p>
-
-        <p>
-          I am currently watching/following the 100DEVS course on Youtube/Twitch. My plan is to expand my knowledge in HTML/CSS/JavaScript,
-          and add them into my skillset. My current projects is this mini-portfolio page, along with some daily automation I do at work during downtime.
-          
-        </p>
-
-
-        <p>
-          For learning purposes, I did not use bootstrap for this website. Is flex-box cheating?
-
-        </p>
-
-
-        <p>
-        May this about page be something I will cringe years from today. Because this is the best I can do so far...
-
-        </p>
-
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="flex-item-div">
-
-      <h1>PROFESSIONAL EXPERIENCE</h1>
+      <h1>PROFESSIONAL EXPERIENCE.</h1>
 
       <div class="flex-professional-cont">
 
@@ -103,10 +79,13 @@
 
       <div class="flex-logos-cont">
 
+
         <img src="logos\ma.jpg" alt="ma logo">
         <img src="logos\cnb.png" alt="cnb logo">
         <img src="logos\rh.jpg" alt="rh logo">
         <img src="logos\cordoba.jpg" alt="cor logo">
+
+
 
       </div>
       </div>
@@ -114,53 +93,47 @@
 
     <hr>
 
-    <div class="flex-item-div">
 
-      <h1>SKILLS</h1>
-      <br>
-      <div class="flex-skill-container">
+    <div>
 
-        <ul>
-            <li>HTML/CSS</li>
-            <li>JavaScript</li>
-            <li>MS Excel</li>
-            <li>VBA</li>
-            <li>Python</li>
-            <li>C</li>
-        </ul>
+      <h1>FAVORITES.</h1>
 
-        <ul>
-            <li>●●○○ -  Beginner/Intermediate  (< 2 years non-professional experience)</li>
-            <li>●○○○ -  Beginner  (< 1 year non-professional experience)</li>
-            <li>●●●● -  Expert  (7+ years professional experience in finance/accounting)</li>
-            <li>●●●○ -  Intermediate/Advanced  (5+ years professional experience in finance/accounting)</li>
-            <li>●●○○ -  Intermediate  (2+ years professional experience in finance/accounting)</li>
-            <li>●○○○ -  Beginner  (< 1 year non-professional experience)</li>
-        </ul>
+      <div class="flex-professional-cont">
 
-      </div>  
+      <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus blanditiis, sapiente at voluptate veritatis quibusdam magnam ea adipisci dolorum facilis officia expedita laudantium, error pariatur in beatae. Suscipit, vero nostrum?. </p>
 
+      <div class="flex-logos-cont">
+
+
+
+      </div>
+      </div>
+    </div>
+
+   <hr>
+
+    <div>
+
+      <h1>PROJECTS.</h1>
+      <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolore non dicta quae nobis, rerum quisquam minus. Eveniet exercitationem fugit harum perferendis mollitia? Consequatur voluptas odit, distinctio iusto reprehenderit dicta.</p>
+
+      <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolore non dicta quae nobis, rerum quisquam minus. Eveniet exercitationem fugit harum perferendis mollitia? Consequatur voluptas odit, distinctio iusto reprehenderit dicta.</p>
+      <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolore non dicta quae nobis, rerum quisquam minus. Eveniet exercitationem fugit harum perferendis mollitia? Consequatur voluptas odit, distinctio iusto reprehenderit dicta.</p>
+   
+        <hr>
 
 
 
     </div>
 
+   
+    </section>
 
+  </main>
 
-    <div class="flex-footer-cont">
+  <footer></footer>
 
-        <div>
-          CONTACT
-        </div>
-
-        <div>
-          ICONS
-        </div>
-
-    </div>
 
   </div>
-
-
 </body>
 </html>
