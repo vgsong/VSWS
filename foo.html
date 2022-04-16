@@ -25,7 +25,7 @@
       <li>Projects</li>
       <li>Links</li>
       <li>Blog</li>
-      <li>JS PRACTICE</li>
+      <li><a href="foo.html">JS PRACTICE</a></li>
     </ul>
 
     <div class="flex-icon-cont">
@@ -73,17 +73,19 @@
         </div>
 
         <div class="jps-temp-cont">
-          <div>
+
             <form>
-              
-              <p>Coin Toss: </p>
-              <button id="tossCoin" type="button">Toss!</button>
-              <h4 id="coinTopResult">Heads: 0</h3>
-              <h4 id="coinBotResult">Tails: 0</h4>
-
-
+              <div>
+                <p>Coin Toss: </p>
+                <button id="tossCoin" type="button">Toss!</button>
+                <button id="tossCoinReset" type="button">Reset</button>
+                <h4 id="coinTopResult">Heads: 0</h4>
+                <h4 id="coinBotResult">Tails: 0</h4>
+                <h6 id="coinHeadsPerc"></h6>
+                <h6 id="coinTailsPerc"></h6>
+              </div>
             </form>
-          </div>
+
         </div>
 
         <div class="jps-temp-cont">
@@ -156,6 +158,18 @@
               
             </div>
           </form>
+        </div>
+
+        <div class="jps-temp-cont">
+
+          <form>
+            <p>CB Test:</p>
+            <input type="text" id="fooInput" placeholder="Hia"></input>
+            <button id="fooSend" type="button">Convert!</button>
+            <h3 id="fooUpper"></h3>
+            <h4 id="fooLower"></h4>
+          </form>
+
         </div>
 
     </section>

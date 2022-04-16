@@ -1,17 +1,45 @@
 
-
-document.querySelector("#sendTemp").addEventListener("click",convertCelcius);
-document.querySelector("#tossCoin").addEventListener("click",coinToss);
-document.querySelector("#counterInc").addEventListener("click",counterAdd);
-document.querySelector("#counterDec").addEventListener("click",counterDec);
-document.querySelector("#counterReset").addEventListener("click", counterZero);
-document.querySelector("#dicerollerThrow").addEventListener("click",diceRoll);
-document.querySelector("#eightBallAnswer").addEventListener("click", getEightBall);
+// ../../VGS/vsws
 
 
+const arrQuerySelector = [
+        "#sendTemp",
+        "#tossCoin",
+        "#counterInc",
+        "#counterDec",
+        "#counterReset",
+        "#dicerollerThrow",
+        "#eightBallAnswer",
+        "#tossCoinReset"
+];
+
+const arrEventRunner= [
+    convertCelcius,
+    coinToss,
+    counterAdd,
+    counterDec,
+    counterZero,
+    diceRoll,
+    getEightBall,
+    coinReset
+];
+
+function innerHtmlFunc(idElement, textString) {
+    document.getElementById(idElement).innerHTML = textString;
+};
+
+
+function createClickEventRunner (querySelection, eventRunner){
+    for (let x = 0 ; x < eventRunner.length; x++ ) {
+    document.querySelector(arrQuerySelector[x]).addEventListener("click",arrEventRunner[x]);
+    };
+};
+
+
+createClickEventRunner(arrQuerySelector, arrEventRunner);
 
 var uCounter = 0;
-document.getElementById("counterBotResult").innerHTML = uCounter;
+innerHtmlFunc("counterBotResult", uCounter);
 
 var headsResult = 0
 var tailsResult = 0
@@ -41,15 +69,37 @@ function convertCelcius() {
 };
 
 function coinToss () {
+
     let result = (Math.random().toFixed(1)*10)%2;
+    let totalCount = 0;
+    let headsPerc = 0;
+    let tailsPerc = 0;
+
 
     if (result == 1 ){
         headsResult += 1;
-        document.getElementById("coinTopResult").innerHTML = `Heads: ${headsResult}`;
+        innerHtmlFunc("coinTopResult", `Heads: ${headsResult}`);
     } else {
         tailsResult += 1;
-        document.getElementById("coinBotResult").innerHTML = `Tails: ${tailsResult}`;
+        innerHtmlFunc("coinBotResult", `Tails: ${tailsResult}`);
     }
+
+    totalCount = headsResult + tailsResult;
+    tailsPerc = tailsResult/totalCount;
+    headsPerc = headsResult/totalCount;
+    document.getElementById("coinHeadsPerc").innerHTML = `Heads: ${(headsPerc*100).toFixed(1)}%`;
+    document.getElementById("coinTailsPerc").innerHTML = `Tails: ${(tailsPerc*100).toFixed(1)}%`;
+
+};
+
+function coinReset(){
+    tailsResult = 0;
+    headsResult = 0;
+    document.getElementById("coinBotResult").innerHTML = `Tails: ${tailsResult}`;
+    document.getElementById("coinTopResult").innerHTML = `Heads: ${headsResult}`;
+    document.getElementById("coinHeadsPerc").innerHTML = `Heads: 0.0%`;
+    document.getElementById("coinTailsPerc").innerHTML = `Tailss: 0.0%`;
+
 };
 
 function counterAdd() {
@@ -79,7 +129,8 @@ function diceRoll(){
     let totalDmg = 0;
 
 
-    document.getElementById("dicerollerTopResult").innerHTML = `Total damage from ${numDice}D${numSides}:`;
+    innerHtmlFunc("dicerollerTopResult", `Total damage from ${numDice}D${numSides}:`);
+
 
     do {
 
@@ -89,9 +140,11 @@ function diceRoll(){
     } while (numDice != 0);
 
     if (hitRoll == 20 ){
-        document.getElementById("dicerollerHitRoll").innerHTML = `${hitRoll} - CRITICAL HIT! GO FOR THE EYES BOO!`;
+        document.getElementById("dicerollerHitRoll").innerHTML = `${hitRoll} - CRITICAL HIT! Torm take you!!`;
+        document.getElementById("dicerollerHitResult").innerHTML = ``;
     } else if (hitRoll == 1) {
         document.getElementById("dicerollerHitRoll").innerHTML = `${hitRoll} - CRITICAL MISS!`;
+        document.getElementById("dicerollerHitResult").innerHTML = ``;
     } 
     
     else {
@@ -141,3 +194,5 @@ function getEightBall() {
     document.getElementById("eightballresponse").innerHTML = `${answerList[randNum]}`;
 
 };
+
+
