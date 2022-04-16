@@ -6,7 +6,7 @@
 }
 
 html {
-    font-size: 100%;
+    font-size: 120%;
     background-color: rgb(204, 204, 204);
 
 }
@@ -21,6 +21,7 @@ body > div {
     flex-direction: row;
     box-shadow: 2px 4px 15px 0  rgb(0, 0, 0);
     background-color: rgb(251, 251, 251);
+    min-width: 85%;
 
 }
 
@@ -47,7 +48,7 @@ header > img {
     min-height: 20vh;
     max-height: 20vh;
     border-radius: 50%;
-    border: 0.1px solid gray;
+    border: 1px solid gray;
     box-shadow: 2px 2px rgb(0, 0, 0);
 }
 
@@ -61,6 +62,7 @@ header ul {
     text-align: center;
     transition: transform(1.5);
 }
+
 header ul li:hover {
     text-shadow: 1px 1px 10px rgb(255, 255, 255);
 }
@@ -68,17 +70,28 @@ header ul li:hover {
 header .flex-icon-cont{
     margin: 0 0 0.5vh 0;
 }
+
 .flex-icon-cont > img{
     width: 2vh;
     height: 2vh;
     margin:0 1vh;
     filter: invert(100%);
-
-
 }
+
+.flex-icon-cont > a{
+    text-decoration: none;
+    
+}
+
+.flex-icon-cont > a:visited{
+    text-decoration: none;
+    
+}
+
 main {
     flex-grow: 2;
 }
+
 main section{
     padding: 1vh 10vh;
 }
@@ -95,7 +108,17 @@ main section h1 {
 .flex-logos-cont {
     display:flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 3vh;
+}
+
+.flex-favs-cont div > p{
+    font-weight: bold;
+    margin: 1vh 0 0 0;
+}
+
+.flex-favs-cont div > ul{
+    list-style-type: none;
 }
 
 .flex-logos-cont > img {
@@ -106,13 +129,91 @@ main section h1 {
     transition: transform 0.2s;
 }
 
-.flex-logos-cont > img:hover {
-    transform: scale(1.1);
+.flex-favslogos-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap
+}
+
+.flex-favslogos-cont div {
+    position: relative;
+}
+
+.flex-favslogos-cont div > img {
+    margin: 1vh;
+    width: 15vh;
+    height: 23vh;
+    border: 1px solid black;
+    transition: transform 0.2s;
+    
+}
+
+.flex-projs-cont {
+    display: flex;
+    flex-direction: column;
+    gap:2vh;
+
+}
+
+.flex-projs-cont > div  {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 1vh;
+    background-color: rgb(233, 233, 233);
+    box-shadow: 1px 1px 5px 0  rgb(0, 0, 0);
+}
+
+.flex-projs-cont div p span  {
+    font-weight: bold;
+}
+
+div.jps-temp-cont {
+    border: 1ps solid black;
+    box-shadow: 10px 5px 5px black;
+    
+}
+
+div.jps-temp-cont form{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 2em;
 }
 
 
+section > div {
+    margin: 1.5em;;
+}
 
-@media only screen and (max-width: 1000px) {
+#tempInput {
+    width: 50%;
+    margin: 1em 0 0 0;
+}
+
+#sendTemp {
+    width: 50%;
+    margin: 1em 0 0 0;
+}
+
+.jps-temp-cont form h1{
+    border: none;
+}
+
+.jps-temp-cont form > div {
+    margin: 0.5em;
+}
+
+#upperTemp {
+    margin: 1em 0 0 0;
+    padding: 0;
+}
+#lowerTemp {
+    margin: 1em 0 0 0;
+    padding: 0;
+}
+
+@media only screen and (max-width: 1350px) {
     body {
         width: 100%;
         margin: 0;
@@ -124,11 +225,13 @@ main section h1 {
         display: flex;
         flex-direction: column;
         min-width: none;
+        padding: 0 1vh;
     }
 
     header{
         max-width: 100%;
         text-align: center;
+        font-size: 1.5em;
     }
 
     header > img {
@@ -137,6 +240,10 @@ main section h1 {
 
     main section{
         padding: 1vh 1vh;
+    }
+
+    .flex-logos-cont > img {
+        display: none;
     }
 
   }

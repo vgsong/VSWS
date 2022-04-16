@@ -2,32 +2,169 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title></title>
-  <link href="foostyle.css" rel="stylesheet" />
+  <title>VS MAIN</title>
+  <link href="css/normalize.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Open+Sans&family=Smooch+Sans&family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
+
+
 </head>
-<body>
-    <div class="container">
-        <div class="card card0">
-          <div class="border">
-            <h2>Al Pacino</h2>
-            <div class="icons">
-              <i class="fa fa-codepen" aria-hidden="true"></i>
-              <i class="fa fa-instagram" aria-hidden="true"></i>
-              <i class="fa fa-dribbble" aria-hidden="true"></i>
-              <i class="fa fa-twitter" aria-hidden="true"></i>
-              <i class="fa fa-facebook" aria-hidden="true"></i>
-            </div>
+<body onload="rotateInterests()">
+
+  <div>
+
+  <header>
+
+    <img src="img/ringo.jpg" alt="ringo">
+
+    <ul>
+      <li><a href="index.html">About</a></li>  
+      <li>Projects</li>
+      <li>Links</li>
+      <li>Blog</li>
+      <li>JS PRACTICE</li>
+    </ul>
+
+    <div class="flex-icon-cont">
+      <img src="logos\locicon.png" alt="">
+      Los Angeles, CA
+    </div>
+
+    <div class="flex-icon-cont">
+      <img src="logos\mailicon.png" alt="" title="vctrsong@gmail.com">
+      E-Mail 
+    </div>
+
+    <div class="flex-icon-cont">
+      <img src="logos\ghicon.png" alt="" title="vgsong">
+      <a href="https://github.com/vgsong">GitHub</a>
+    </div>
+
+    <div class="flex-icon-cont">
+      <img src="logos\twitticon.png" alt="" title = "kazusong">
+      Twitter
+    </div>
+
+    <div class="flex-icon-cont">
+      <img src="logos\codewarsicon.png" alt="" title = "vgsong">
+      <a href="https://www.codewars.com/users/vgsong">Codewars</a>
+    </div>
+
+  </header>
+
+  <main>
+
+    <section>
+
+      <h1>My Useless JS Page.</h1>
+
+        <div class="jps-temp-cont">
+          <form>
+            <p>Please Enter Temperature in Farhenheit:</p>
+            <input type="text" id="tempInput" placeholder="Hia"></input>
+            <button id="sendTemp" type="button">Convert!</button>
+            <h3 id="upperTemp"></h3>
+            <h4 id="lowerTemp"></h4>
+          </form>
+
+        </div>
+
+        <div class="jps-temp-cont">
+          <div>
+            <form>
+              
+              <p>Coin Toss: </p>
+              <button id="tossCoin" type="button">Toss!</button>
+              <h4 id="coinTopResult">Heads: 0</h3>
+              <h4 id="coinBotResult">Tails: 0</h4>
+
+
+            </form>
           </div>
-        </div>.container
-  height: 100vh
-  width: 100vw
-  max-height: 800px
-  max-width: 1280px
-  min-height: 600px
-  min-width: 1000px
-  display: flex
-  justify-content: space-around
-  align-items: center
-  margin: 0 auto
+        </div>
+
+        <div class="jps-temp-cont">
+          <form>
+
+            <p>Useless Counter: </p>
+
+            <div>
+
+              <button id="counterDec" type="button">Decrease!</button>
+              <button id="counterReset" type="button">Reset</button>
+              <button id="counterInc" type="button">Add!</button>
+
+            </div>
+
+            <div>
+            <h3 id="counterTopResult">count: </h3>
+            <h4 id="counterBotResult"></h4>
+            </div>
+
+
+          </form>
+        </div>
+
+        <div class="jps-temp-cont">
+
+          <form>
+
+            <p>Baldur's Gate D&D 2E Attack Roller: </p>
+
+            <div>
+              <p>Die & Roll Input: </p>
+              <input id="dicerollerDiceNumber" type="text" placeholder="Number of Dice"></input>
+              <input id="dicerollerDiceSides" type="text" placeholder="Number of Sides"></input>
+              <button id="dicerollerThrow" type="button">Throw!</button>
+
+            </div>
+
+            <div>
+              <p>AC & THAC0 Input: </p>
+              <input id="dicerollerAC" type="text" placeholder="Target AC"></input>
+              <input id="dicerollerTHACO" type="text" placeholder="Enter THAC0"></input>
+            
+            </div>
+
+            <div>
+
+              <p>Hit Roll: </p>
+              <p id="dicerollerHitRoll"></p>
+              <p id="dicerollerHitResult"></p>
+
+              <br>
+
+              <h3 id="dicerollerTopResult">Total damage: </h3>
+              <h4 id="dicerollerBotResult"></h4>
+
+            </div>
+
+          </form>
+
+        </div>
+
+        <div class="jps-temp-cont">
+          <form>
+            <div>
+
+              <p>Magic 8 Ball: </p>
+              <button id="eightBallAnswer" type="button">Ask me anything!</button>
+              <p id="eightballresponse"></p>
+              
+            </div>
+          </form>
+        </div>
+
+    </section>
+
+  </main>
+
+  <footer></footer>
+  <script type="text/javascript" src="script/main.js"></script>
+
+  </div>
 </body>
 </html>

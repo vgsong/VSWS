@@ -5,7 +5,7 @@
   <title>VS MAIN</title>
   <link href="css/normalize.css" rel="stylesheet" />
   <link href="css/style.css" rel="stylesheet" />
-  <script src="script/main.js"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Open+Sans&family=Smooch+Sans&family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
@@ -17,13 +17,15 @@
   <div>
 
   <header>
+
     <img src="img/ringo.jpg" alt="ringo">
 
     <ul>
-      <li>About</li>
+      <li>About</li>  
       <li>Projects</li>
       <li>Links</li>
       <li>Blog</li>
+      <li><a href="foo.html">JS PRACTICE</a></li>
     </ul>
 
     <div class="flex-icon-cont">
@@ -32,23 +34,23 @@
     </div>
 
     <div class="flex-icon-cont">
-      <img src="logos\mailicon.png" alt="">
+      <img src="logos\mailicon.png" alt="" title="vctrsong@gmail.com">
       E-Mail 
     </div>
 
     <div class="flex-icon-cont">
-      <img src="logos\ghicon.png" alt="">
-      GitHub
+      <img src="logos\ghicon.png" alt="" title="vgsong">
+      <a href="https://github.com/vgsong">GitHub</a>
     </div>
 
     <div class="flex-icon-cont">
-      <img src="logos\twitticon.png" alt="">
+      <img src="logos\twitticon.png" alt="" title = "kazusong">
       Twitter
     </div>
 
     <div class="flex-icon-cont">
-      <img src="logos\steamico.png" alt="">
-      Steam
+      <img src="logos\codewarsicon.png" alt="" title = "vgsong">
+      <a href="https://www.codewars.com/users/vgsong">Codewars</a>
     </div>
 
   </header>
@@ -57,82 +59,142 @@
 
     <section>
 
-
       <h1>ABOUT.</h1>
-      <p id="chgtext">Hi.</p>
-      <p>I work in a civil engineering company as Financial/Data Analyst. </p>
-       <p>Outside work I enjoy cycling, programming, reading, and learning new things.</p>
+      <p>Hi.</p>
+      <p>I work for a civil engineering company as Financial/Data Analyst. </p>
+      <p>Outside work I enjoy cycling, programming, reading, and learning new things.</p>
+      <p>I am watching/following the 100DEVS full-stack course on Youtube/Twitch. 
+      I am also learning full-stack on freeCodeCamp.com</p>
+      <p>I consider myself "advanced" beginner in programming. 
+        I would love to get an opportunity to get more professional experience in the field.</p>  
 
-      <p>I am watching/following the 100DEVS full-stack course on Youtube/Twitch. I am also learning React on freeCodeCamp.com</p>
-      <p>I consider myself "advanced" beginner in programming. I would love to get an opportunity to get more professional experience in the field.</p>  
-  
-        <hr>
+        <input id="day" type="text">
+        <button id="check" type="button" name="button">Learning!!</button>
+      <hr>
 
-      
-    <div>
+      <div>
 
-      <h1>PROFESSIONAL EXPERIENCE.</h1>
+        <h1>PROFESSIONAL EXPERIENCE.</h1>
 
-      <div class="flex-professional-cont">
+        <div>
 
-      <p> I started my career in public accounting and worked in the financial institution sector. Currently working as Finance/Data Analyst for a civil engineering company. </p>
+          <p> I started my career in public accounting and worked in the financial institution sector. Currently working as Finance/Data Analyst for a civil engineering company. </p>
 
-      <div class="flex-logos-cont">
+          <div class="flex-logos-cont">
 
+            <img src="logos\ma.jpg" alt="ma logo">
+            <img src="logos\cnb.png" alt="cnb logo">
+            <img src="logos\rh.jpg" alt="rh logo">
+            <img src="logos\cordoba.jpg" alt="cor logo">
 
-        <img src="logos\ma.jpg" alt="ma logo">
-        <img src="logos\cnb.png" alt="cnb logo">
-        <img src="logos\rh.jpg" alt="rh logo">
-        <img src="logos\cordoba.jpg" alt="cor logo">
+          </div>
+        </div>
+      </div>
 
+      <hr>
 
+      <div>
+
+        <h1>PROJECTS.</h1>
+
+        <div class="flex-projs-cont">
+
+          <div>
+
+            <h3>INVOICE UPLOADER</h3>
+            <p><span>Tools:</span> Python (pandas, selenium, pyautogui)</p>
+            <p><span>Background:</span> The company used to upload hundreds of invoices manually into a client's portal. 
+              This script obtains invoice information from a csv file and python initiates selenium browser driver, 
+              logs into the portal, creates an invoice upload form, fills the form and submits it. The process got automated 
+              (not fully), which freed the time for the whole department. The BOT requires minimum setup time and mapping.
+              Around 1600 invoices have been uploaded since August 2021. </p>
+              <a href="">GitHub URL</a>
+
+          </div>
+
+          <div>
+
+            <h3>INVOICE FILER</h3>
+            <p><span>Tools:</span> Python (standard library)</p>
+            <p><span>Background:</span> Every month invoices need to be filed in the network drive.
+              The invoices are filed based on project/subproject and year (YYYY) and month (MM MMM YYYY) period.  
+              The bot uses an invoice mapping from csv file, and moves invoices from a repository folder into its respective program/project/subproject, 
+              and proper period (YYYY and MM MMM YYYY) directory. If the directory does not exist, the bot creates one, 
+              and moves the invoice into the just created directory. </p>
+              <a href="">GitHub URL</a>
+
+          </div>
+
+          <div>
+
+            <h3>INVOICE PDF READER</h3>
+            <p><span>Tools:</span> Python (pandas, PyPDF2, tkinter)</p>
+            <p><span>Background:</span> Hundreds of invoices are processed monthly, and each of them requires to be renamed using company's SOP 
+              and its information transposed into excel. With PyPDF2, the script extracts all the strings from the PDF invoice, 
+              filters the information using RegEx, and appends them into an excel spreadsheet. This script helps ease out the 
+              manual data entry portion, as well as the invoice renaming process.
+              This script also supports the INVOICE BOT UPLOADER. </p>
+              <a href="">GitHub URL</a>
+
+          </div>
+
+          <div>
+
+            <h3>PYTHON Developer Certification (freeCodeCamp)</h3>
+            <p><span>Tools:</span> Python (standard library)</p>
+            <p><span>Background:</span> My curiosity led me to start learning python and freeCodeCamp was one of the pivot resources into making this happen so far. 
+              I often go see my old saved codes and cringe... 
+              just how you are cringing from my projects from above right now. </p>
+              <a href="">GitHub URL</a>
+
+          </div>
+        </div>
 
       </div>
+
+      <hr>
+
+      <div class="flex-favs-cont">
+
+        <h1>FAVORITES.</h1>
+
+        <div>
+
+          <p>Favorite websites: </p>
+            <ul>
+              <li><a href="https://www.boredbutton.com">Bored Button</a> - Website for the bored ones. Great for finding new ideas.</li>
+              <li><a href="https://www.rainymood.com">RainyMood</a> - The great rain sounds. Good for concentration/reading.</li>
+              <li><a href="https://www.neal.fun">Neal.fun</a> - Misc and interesting interactive website facts visualizer</li>
+          </ul> 
+
+        
+          <p>Favorite (must-read) Books: </p>
+
+          <div class="flex-favslogos-cont">
+
+            <div>
+
+              <img src="logos\tbk.jpg" alt="The Brothers Karamazov logo">
+              <img src="logos\dqb.jpg" alt="Sancho! logo">
+              <img src="logos\musashi.jpg" alt="takezo logo">
+              <img src="logos\taiko.jpg" alt="saru! logo">
+              <img src="logos\cripuni.jpg" alt="cripuni logo">
+              <img src="logos\ecoimp.jpg" alt="ecoimp logo">
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
-    </div>
 
-    <hr>
-
-
-    <div>
-
-      <h1>FAVORITES.</h1>
-
-      <div class="flex-professional-cont">
-
-      <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus blanditiis, sapiente at voluptate veritatis quibusdam magnam ea adipisci dolorum facilis officia expedita laudantium, error pariatur in beatae. Suscipit, vero nostrum?. </p>
-
-      <div class="flex-logos-cont">
-
-
-
-      </div>
-      </div>
-    </div>
-
-   <hr>
-
-    <div>
-
-      <h1>PROJECTS.</h1>
-      <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolore non dicta quae nobis, rerum quisquam minus. Eveniet exercitationem fugit harum perferendis mollitia? Consequatur voluptas odit, distinctio iusto reprehenderit dicta.</p>
-
-      <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolore non dicta quae nobis, rerum quisquam minus. Eveniet exercitationem fugit harum perferendis mollitia? Consequatur voluptas odit, distinctio iusto reprehenderit dicta.</p>
-      <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolore non dicta quae nobis, rerum quisquam minus. Eveniet exercitationem fugit harum perferendis mollitia? Consequatur voluptas odit, distinctio iusto reprehenderit dicta.</p>
-   
-        <hr>
-
-
-
-    </div>
-
-   
     </section>
 
   </main>
 
   <footer></footer>
-
+  <script type="text/javascript" src="script/main.js"></script>
 
   </div>
 </body>
