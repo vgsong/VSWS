@@ -28,7 +28,7 @@ function innerHtmlFunc(idElement, textString) {
     // assembly for innerHTML
     // created to make my js page look "less messy"
 
-    document.getElementById(idElement).innerHTML = textString;
+    return document.getElementById(idElement).innerHTML = textString;
 
 };
 
@@ -39,7 +39,7 @@ function createClickEventRunner (querySelection, eventRunner){
 
     for (let x = 0 ; x < eventRunner.length; x++ ) {
 
-        document.querySelector(querySelection[x]).addEventListener("click",eventRunner[x]);
+        return document.querySelector(querySelection[x]).addEventListener("click",eventRunner[x]);
 
     };
 };
