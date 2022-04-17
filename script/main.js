@@ -25,7 +25,7 @@ const arrEventRunner = [
 ];
 
 function innerHtmlFunc(idElement, textString) {
-    // assembly for innerHTML mutation
+    // assembly for innerHTML
     // created to make my js page look "less messy"
 
     document.getElementById(idElement).innerHTML = textString;
