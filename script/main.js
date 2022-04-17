@@ -13,27 +13,41 @@ const arrQuerySelector = [
         "#tossCoinReset"
 ];
 
-const arrEventRunner= [
-    convertCelcius,
-    coinToss,
-    counterAdd,
-    counterDec,
-    counterZero,
-    diceRoll,
-    getEightBall,
-    coinReset
+const arrEventRunner = [
+        convertCelcius,
+        coinToss,
+        counterAdd,
+        counterDec,
+        counterZero,
+        diceRoll,
+        getEightBall,
+        coinReset
 ];
 
 function innerHtmlFunc(idElement, textString) {
+    // assembly for innerHTML mutation
+    // created to make my js page look "less messy"
+
     document.getElementById(idElement).innerHTML = textString;
+
 };
 
 
 function createClickEventRunner (querySelection, eventRunner){
+    //  to add event listener, create #id string in arrQuerySelection 
+    //  and the function triggered by click in arrEventRunner 
+
     for (let x = 0 ; x < eventRunner.length; x++ ) {
-    document.querySelector(arrQuerySelector[x]).addEventListener("click",arrEventRunner[x]);
+
+        document.querySelector(querySelection[x]).addEventListener("click",eventRunner[x]);
+
     };
 };
+
+function randIntRang(minRange, maxRange) {
+    return (Math.random()*(maxRange - minRange)+1).toFixed(0);
+}
+
 
 
 createClickEventRunner(arrQuerySelector, arrEventRunner);
@@ -72,9 +86,9 @@ function coinToss () {
 
     let result = (Math.random().toFixed(1)*10)%2;
     let totalCount = 0;
+
     let headsPerc = 0;
     let tailsPerc = 0;
-
 
     if (result == 1 ){
         headsResult += 1;
@@ -87,41 +101,44 @@ function coinToss () {
     totalCount = headsResult + tailsResult;
     tailsPerc = tailsResult/totalCount;
     headsPerc = headsResult/totalCount;
-    document.getElementById("coinHeadsPerc").innerHTML = `Heads: ${(headsPerc*100).toFixed(1)}%`;
-    document.getElementById("coinTailsPerc").innerHTML = `Tails: ${(tailsPerc*100).toFixed(1)}%`;
+
+    innerHtmlFunc("coinHeadsPerc",`Heads: ${(headsPerc*100).toFixed(1)}%`);
+    innerHtmlFunc("coinTailsPerc",`Tails: ${(tailsPerc*100).toFixed(1)}%`);
 
 };
 
 function coinReset(){
+
     tailsResult = 0;
     headsResult = 0;
-    document.getElementById("coinBotResult").innerHTML = `Tails: ${tailsResult}`;
-    document.getElementById("coinTopResult").innerHTML = `Heads: ${headsResult}`;
-    document.getElementById("coinHeadsPerc").innerHTML = `Heads: 0.0%`;
-    document.getElementById("coinTailsPerc").innerHTML = `Tailss: 0.0%`;
+    innerHtmlFunc("coinBotResult", `Tails: ${tailsResult}`);
+    innerHtmlFunc("coinTopResult", `Heads: ${headsResult}`);
+    innerHtmlFunc("coinHeadsPerc", `Heads: 0.0%`);
+    innerHtmlFunc("coinTailsPerc", `Tailss: 0.0%`);
 
 };
 
 function counterAdd() {
     uCounter +=1;
-    document.getElementById("counterBotResult").innerHTML = uCounter;
+    innerHtmlFunc("counterBotResult", uCounter);
 };
 
 function counterDec() {
     uCounter -= 1;
-    document.getElementById("counterBotResult").innerHTML = uCounter;
+    innerHtmlFunc("counterBotResult", uCounter);
 };
 
 function counterZero() {
     uCounter = 0;
-    document.getElementById("counterBotResult").innerHTML = uCounter;
+    innerHtmlFunc("counterBotResult", uCounter);
 };
 
 function diceRoll(){
 
+    const hitRoll = Math.round(Number(Math.random()*(20-1)+1));
+
     let numDice = document.getElementById("dicerollerDiceNumber").value;
     let numSides = document.getElementById("dicerollerDiceSides").value;
-    const hitRoll = Math.round(Number(Math.random()*(20-1)+1));
     let armorClass = Number(document.getElementById("dicerollerAC").value);
     let hitThaco = Number(document.getElementById("dicerollerTHACO").value);
 
@@ -139,28 +156,36 @@ function diceRoll(){
 
     } while (numDice != 0);
 
+
     if (hitRoll == 20 ){
-        document.getElementById("dicerollerHitRoll").innerHTML = `${hitRoll} - CRITICAL HIT! Torm take you!!`;
-        document.getElementById("dicerollerHitResult").innerHTML = ``;
+
+        innerHtmlFunc("dicerollerHitRoll", `${hitRoll} - CRITICAL HIT! Torm take you!!`);
+        innerHtmlFunc("dicerollerHitResult", ``);
+
     } else if (hitRoll == 1) {
-        document.getElementById("dicerollerHitRoll").innerHTML = `${hitRoll} - CRITICAL MISS!`;
-        document.getElementById("dicerollerHitResult").innerHTML = ``;
+
+        innerHtmlFunc("dicerollerHitRoll", `${hitRoll} - CRITICAL MISS!`);
+        innerHtmlFunc("dicerollerHitResult", ``);
+
     } 
     
     else {
 
-        if ( hitRoll >= hitChance ){
-            document.getElementById("dicerollerHitRoll").innerHTML = `to Hit: ${hitChance}`;
-            document.getElementById("dicerollerHitResult").innerHTML = `You Rolled ${hitRoll}: HIT`;
+        if ( hitRoll >= hitChance ) {
+
+            innerHtmlFunc("dicerollerHitRoll", `to Hit: ${hitChance}`);
+            innerHtmlFunc("dicerollerHitResult", `You Rolled ${hitRoll}: HIT`);
+
             
         } else {
-            document.getElementById("dicerollerHitRoll").innerHTML = `to Hit: ${hitChance}`;
-            document.getElementById("dicerollerHitResult").innerHTML = `You Rolled ${hitRoll}: MISS`;
+
+            innerHtmlFunc("dicerollerHitRoll", `to Hit: ${hitChance}`);
+            innerHtmlFunc("dicerollerHitResult", `You Rolled ${hitRoll}: MISS`);
 
         }
     }
 
-    document.getElementById("dicerollerBotResult").innerHTML = String(totalDmg);
+    innerHtmlFunc("dicerollerBotResult", String(totalDmg));
 
 };
 
@@ -191,7 +216,7 @@ function getEightBall() {
 
     let randNum = Math.round(Math.random()*(answerList.length-1));
 
-    document.getElementById("eightballresponse").innerHTML = `${answerList[randNum]}`;
+    innerHtmlFunc("eightballResponse", `${answerList[randNum]}`);
 
 };
 
