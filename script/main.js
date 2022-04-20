@@ -29,7 +29,6 @@ function innerHtmlFunc(idElement, textString) {
     // created to make my js page look "less messy"
 
     return document.getElementById(idElement).innerHTML = textString;
-
 };
 
 
@@ -39,16 +38,13 @@ function createClickEventRunner (querySelection, eventRunner){
 
     for (let x = 0 ; x < eventRunner.length; x++ ) {
 
-        return document.querySelector(querySelection[x]).addEventListener("click",eventRunner[x]);
-
+        document.querySelector(querySelection[x]).addEventListener("click",eventRunner[x]);
     };
 };
 
 function randIntRang(minRange, maxRange) {
     return (Math.random()*(maxRange - minRange)+1).toFixed(0);
 }
-
-
 
 createClickEventRunner(arrQuerySelector, arrEventRunner);
 
