@@ -10,7 +10,10 @@ const arrQuerySelector = [
         "#counterReset",
         "#dicerollerThrow",
         "#eightBallAnswer",
-        "#tossCoinReset"
+        "#tossCoinReset",
+        "#selectRock",
+        "#selectPaper",
+        "#selectScissors"
 ];
 
 const arrEventRunner = [
@@ -21,7 +24,11 @@ const arrEventRunner = [
         counterZero,
         diceRoll,
         getEightBall,
-        coinReset
+        coinReset,
+        janKenStart,
+        janKenStart,
+        janKenStart
+
 ];
 
 function innerHtmlFunc(idElement, textString) {
@@ -216,4 +223,39 @@ function getEightBall() {
 
 };
 
+function janKenStart(event) {
+
+    function checkWinner(pC,aC){
+        if ((pC == 'Rock' && aC == 'Scissors') || 
+        (pC == 'Paper' && aC == 'Rock') ||
+        (pC == 'Scissors' && aC == 'Paper')
+        ){
+            innerHtmlFunc("jankenResult", `Result: You're a Winner!`);
+        } else if ((pC == 'Rock' && aC == 'Rock') || 
+        (pC == 'Paper' && aC == 'Paper') ||
+        (pC == 'Scissors' && aC == 'Scissors')
+        ){
+            innerHtmlFunc("jankenResult", `Result: Tie Tie!`);
+        } else {
+            innerHtmlFunc("jankenResult", `Result: You Lose!`);
+        }
+    };
+
+    let pChoice = event.target.innerHTML;
+    let bChoice = janKenPo();
+
+    innerHtmlFunc("jankenPlayerChoice",`YOU: ${pChoice}`);
+    innerHtmlFunc("jankenAIChoice",`AI: ${bChoice}`);
+
+    checkWinner(pChoice,bChoice);
+
+};
+
+
+
+function janKenPo(){
+  let x = Math.random();
+  let result = x < 0.33 ? 'Rock': x < 0.66 ? 'Paper' : 'Scissors';
+  return result;
+};
 
