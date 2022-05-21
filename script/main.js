@@ -2,6 +2,27 @@
 // ../../VGS/vsws
 
 
+function fetchPoke(){
+    const userPoke = document.getElementById("urlPoke").value
+    const baseUrl = `https://pokeapi.co/api/v2`
+    const url = `${baseUrl}/pokemon/${userPoke}`
+
+        fetch(url)
+            .then(res => 
+                res.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(err => {
+                console.log(`error ${err}`);
+            });
+
+
+};
+
+
+
+
 const arrQuerySelector = [
         "#sendTemp",
         "#tossCoin",
@@ -13,7 +34,8 @@ const arrQuerySelector = [
         "#tossCoinReset",
         "#selectRock",
         "#selectPaper",
-        "#selectScissors"
+        "#selectScissors",
+        "#searchPoke"
 ];
 
 const arrEventRunner = [
@@ -27,7 +49,8 @@ const arrEventRunner = [
         coinReset,
         janKenStart,
         janKenStart,
-        janKenStart
+        janKenStart,
+        fetchPoke,
 
 ];
 
@@ -226,25 +249,31 @@ function getEightBall() {
 function janKenStart(event) {
 
     function checkWinner(pC,aC){
+
         if ((pC == 'Rock' && aC == 'Scissors') || 
         (pC == 'Paper' && aC == 'Rock') ||
         (pC == 'Scissors' && aC == 'Paper')
         ){
             innerHtmlFunc("jankenResult", `Result: You're a Winner!`);
+        
         } else if ((pC == 'Rock' && aC == 'Rock') || 
         (pC == 'Paper' && aC == 'Paper') ||
         (pC == 'Scissors' && aC == 'Scissors')
         ){
             innerHtmlFunc("jankenResult", `Result: Tie Tie!`);
+
         } else {
+
             innerHtmlFunc("jankenResult", `Result: You Lose!`);
+
         }
+
     };
 
     let pChoice = event.target.innerHTML;
     let bChoice = janKenPo();
 
-    innerHtmlFunc("jankenPlayerChoice",`YOU: ${pChoice}`);
+    innerHtmlFunc("jankenPlayerChoice",`PLAYER: ${pChoice}`);
     innerHtmlFunc("jankenAIChoice",`AI: ${bChoice}`);
 
     checkWinner(pChoice,bChoice);

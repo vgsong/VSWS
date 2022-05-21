@@ -16,12 +16,12 @@ p, h1,h4{
 }
 
 body > div {
-    margin: 5vh 10vh;
+    margin: 2vh 4vh;
     display: flex;
     flex-direction: row;
     box-shadow: 2px 4px 15px 0  rgb(0, 0, 0);
-    background-color: rgb(251, 251, 251);
-    min-width: 85%;
+    background-color: #181a1b;
+    min-width: 90%;
 
 }
 
@@ -226,7 +226,7 @@ section > div {
         display: flex;
         flex-direction: column;
         min-width: none;
-        padding: 0 1vh;
+        padding: 1vh;
     }
 
     header{
